@@ -7,6 +7,13 @@
 # you're doing.
 Vagrant.configure("2") do |config|
 
+  # Vagrant insecure key detected. Vagrant will automatically replace の状態を止める
+  config.ssh.insert_key = false
+
+  # コマンドでsshログインの際、-Aオプションを付けずに、githubの鍵などをvagrantに持ちこめるようにする。(macの場合キーチェーンが自動で行ってくれる。)
+  config.ssh.forward_agent = true
+
+
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
