@@ -8,12 +8,23 @@ cakephpのアプリが一発で立ち上がるスクリプトを書いていま�
 
 ## 前提条件
 vagrant 1.8.4 〜 1.8.6
+
 virtualbox 
+
 mac ( linux )
 
 
 ## インストール環境
 centOS 7.2
-php 5.6
-mysql 5.6
+
+php 7.0
+
+mariadb
+
 cakephp 3.2.12
+
+
+## 備考
+provision.sh で sudo を使わず yum から書いているコマンドばかりですが、
+sudo で行っているのと同じになります。
+これは、Vagrantfileに書かれている、config.vmprovision "shell" がデフォルトでsudo権限で行うためです。

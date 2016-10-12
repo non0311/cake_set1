@@ -74,6 +74,8 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   # config.vm.provision "shell", inline: <<-SHELL
 
+    config.vm.provision "shell",:path => "./provision.sh"
+
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
