@@ -23,3 +23,8 @@ mariadb
 
 cakephp 3.2.12
 
+
+## 備考
+provision.sh で sudo を使わず yum から書いているコマンドばかりですが、
+sudo で行っているのと同じになります。
+これは、Vagrantfileに書かれている、config.vmprovision "shell" がデフォルトでsudo権限で行うためです。
