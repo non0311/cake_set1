@@ -260,15 +260,15 @@ return [
         /**
          * The test connection is used during the test suite.
          */
-        'test' => [
+        'dev' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => 'localhost',
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
+            'username' => 'cakephp',
             'password' => 'secret',
-            'database' => 'test_myapp',
+            'database' => 'cake_set',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

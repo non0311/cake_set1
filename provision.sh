@@ -3,6 +3,9 @@
 #httpd インストール
 yum -y install httpd
 
+#仮に手動でやるならgit使うならこれ
+#yum -y install git
+#yum -y install zip
 
 ##### ↓↓↓ データベースの選択 ↓↓↓ #####
 # (MariaDB or MySQL 不要な方をコメントアウトする)
@@ -40,6 +43,7 @@ rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 #php7.0 関連 インストール
 yum -y install --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
+#2016.10.24 ミラーサイトなしの不具合。上記の前にこれを yum list --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
 
 #php5.6  ※cake2.8〜 php7.0対応する   ※devel と gd モジュール不要かも
 #yum -y install --enablerepo=remi,epel,remi-php56 php php-intl php-mbstring php-pdo php-mysqlnd php-devel php-gd
@@ -48,7 +52,7 @@ yum -y install --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-p
 cd /usr/local/bin
 curl -s https://getcomposer.org/installer | php
 
-#composer を使いcakephpライブラリをインストール  (詳細をREADMEに追加)
+#composer を使いcakephpライブラリをインストール(詳細をREADMEに追加)
 cd /vagrant/dev_app/
 yes | /usr/local/bin/composer.phar install
 
