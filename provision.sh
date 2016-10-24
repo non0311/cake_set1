@@ -45,7 +45,7 @@ cd /usr/local/bin
 curl -s https://getcomposer.org/installer | php
 
 #composer を使いcakephpライブラリをインストール
-cd /vagrant/test_app/
+cd /vagrant/dev_app/
 yes | /usr/local/bin/composer.phar install
 
 #httpd シンボリック作成
