@@ -43,5 +43,3 @@ date datetime,
 num int,
 result text);
 "
-
-
