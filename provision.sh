@@ -33,8 +33,9 @@ yum -y install mysql-community-server
 ##### ↑↑↑ データベースの選択 ↑↑↑ #####
 
 
-#epel,remi インストール
+#epel,remi インストール  ※remiのインスールがシェルでうまくいかないためphp5.4が入る。(修正中)
 yum -y install epel-release
+#wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 #php7.0 関連 インストール
@@ -47,7 +48,7 @@ yum -y install --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-p
 cd /usr/local/bin
 curl -s https://getcomposer.org/installer | php
 
-#composer を使いcakephpライブラリをインストール
+#composer を使いcakephpライブラリをインストール  (詳細をREADMEに追加)
 cd /vagrant/dev_app/
 yes | /usr/local/bin/composer.phar install
 
