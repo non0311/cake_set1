@@ -37,8 +37,11 @@ yum -y install mysql-community-server
 yum -y install epel-release
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
-#php関連 インストール
+#php7.0 関連 インストール
 yum -y install --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
+
+#php5.6  ※cake2.8〜 php7.0対応する   ※devel と gd モジュール不要かも
+#yum -y install --enablerepo=remi,epel,remi-php56 php php-intl php-mbstring php-pdo php-mysqlnd php-devel php-gd
 
 #composer インストール
 cd /usr/local/bin
