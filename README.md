@@ -59,3 +59,35 @@ dev_appがホストPCに作成される。(シンクされる)
 ※ちなみにこのコマンドは、/vagrant/test_app/composer.json の中身を実行しています。
 dev_appは、プログラムなど入っており変化するのでgit管理をし、
 変化のないものvendorなどや、logなどあったらコンフリクトをたくさん起こしそうなものは、ignoreではじいています。
+
+## cake 2.x 系の手動インストール 
+
+cd ドキュメントルート
+git clone -b 2.x git://github.com/cakephp/cakephp.git
+これで2系の最新版が来る
+
+allグリーンにするために
+手動修正点
+1 権限を変更 (実行ユーザーvagrantにする手もあるかも)
+sudo chown -R apache app/tmp
+sudo chmod -R 755 app/tmp
+
+2  /etc/httpd/conf/httpd.conf を下記のようにする
+<Directory "/var/www/html">
+#   AllowOverride None
+   AllowOverride All
+</Directory>
+
+3 Security.salt及びSecurity.cipherSeedの変更
+
+4 データベース /app/Config の.defaultを除く
+mv database.php.default database.php
+
+5 データベース作成し、設定 ルートユーザーでも良いかも
+database.php
+
+6 デバックキット
+git clone https://github.com/cakephp/debug_kit.git
+app/Pluginにフォルダを配置してDebugKitにリネーム
+app/Config/bootstrap.phpに下記を追加(既存であるのでコメントアウトでも良い)
+CakePlugin::load('DebugKit');
