@@ -61,8 +61,10 @@ dev_appは、プログラムなど入っており変化するのでgit管理を�
 変化のないものvendorなどや、logなどあったらコンフリクトをたくさん起こしそうなものは、ignoreではじいています。
 
 ## cake 2.x 系の手動インストール 
+10.24のときは、MVCのファイルはあったぽい(ディレクトリ名cakephp2.9.1?? ドキュメントルートは最初／var／www／htmlで行った)
+10.26やったら、MVCのファイルができてなかった。(ディレクトリ名cakephp、ドキュメントルートを/vagrantで、そこにgit cloneした)
 
-cd ドキュメントルート
+仮想のcd ドキュメントルート
 git clone -b 2.x git://github.com/cakephp/cakephp.git
 これで2系の最新版が来る
 
