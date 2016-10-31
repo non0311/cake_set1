@@ -61,16 +61,14 @@ dev_appは、プログラムなど入っており変化するのでgit管理を�
 変化のないものvendorなどや、logなどあったらコンフリクトをたくさん起こしそうなものは、ignoreではじいています。
 
 ## cake 2.x 系の手動インストール 
-10.24のときは、MVCのファイルはあったぽい(ディレクトリ名cakephp2.9.1?? ドキュメントルートは最初／var／www／htmlで行った)
-10.26やったら、MVCのファイルができてなかった。(ディレクトリ名cakephp、ドキュメントルートを/vagrantで、そこにgit cloneした)
 
-仮想のcd ドキュメントルート
+仮想のcd ドキュメントルート で下記を実行
 git clone -b 2.x git://github.com/cakephp/cakephp.git
-これで2系の最新版が来る
+これで2系の最新版が来る。
 
 allグリーンにするために
 手動修正点
-1 権限を変更 (実行ユーザーvagrantにする手もあるかも)
+1 権限を変更 (実行ユーザーvagrantにする手も可能)
 sudo chown -R apache app/tmp
 sudo chmod -R 755 app/tmp
 
@@ -82,13 +80,13 @@ sudo chmod -R 755 app/tmp
 
 3 Security.salt及びSecurity.cipherSeedの変更
 
-4 データベース /app/Config の.defaultを除く
+4 db  /app/Config の.defaultを除く
 mv database.php.default database.php
 
-5 データベース作成し、設定 ルートユーザーでも良いかも
+5 db作成し、設定。userは新規でなくてrootも可能
 database.php
 
-6 デバックキット
+6 Debug Kit
 git clone https://github.com/cakephp/debug_kit.git
 app/Pluginにフォルダを配置してDebugKitにリネーム
 app/Config/bootstrap.phpに下記を追加(既存であるのでコメントアウトでも良い)
