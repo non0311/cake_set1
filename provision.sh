@@ -3,9 +3,8 @@
 #httpd インストール
 yum -y install httpd
 
-#仮に手動でやるならgit使うならこれ
-#yum -y install git
-#yum -y install zip
+#仮に手動でやるならgit使うならマスト
+#yum -y install git zip
 
 ##### ↓↓↓ データベースの選択 ↓↓↓ #####
 # (MariaDB or MySQL 不要な方をコメントアウトする)
@@ -36,16 +35,16 @@ yum -y install mysql-community-server
 ##### ↑↑↑ データベースの選択 ↑↑↑ #####
 
 
-#epel,remi インストール  ※remiのインスールがシェルでうまくいかないためphp5.4が入る。(修正中)
+#epel,remi インストール
 yum -y install epel-release
 #wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 #php7.0 関連 インストール
 yum -y install --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
-#2016.10.24 ミラーサイトなしの不具合。上記の前にこれを yum list --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
+#2016.10.24 ミラーサイトなしの不具合。上記の前に次のコマンドを打つことで解消 yum list --enablerepo=remi,epel,remi-php70 php php-intl php-mbstring php-pdo php-mysqlnd
 
-#php5.6  ※cake2.8〜 php7.0対応する   ※devel と gd モジュール不要かも
+#php5.6  ※cake2.8〜 php7.0対応している   ※devel と gd モジュール不要かも
 #yum -y install --enablerepo=remi,epel,remi-php56 php php-intl php-mbstring php-pdo php-mysqlnd php-devel php-gd
 
 #composer インストール
