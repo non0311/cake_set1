@@ -56,8 +56,8 @@ curl -s https://getcomposer.org/installer | php
 cd /vagrant/dev_app/
 yes | /usr/local/bin/composer.phar install
 
-#httpd シンボリック作成
-ln -s /vagrant/cakephp.conf /etc/httpd/conf.d/.
+#httpd シンボリック作成 (/vagrantをドキュメントルートにするなら必要)
+#ln -s /vagrant/cakephp.conf /etc/httpd/conf.d/.
 
 #httpd 起動設定
 systemctl start httpd
